@@ -1,5 +1,6 @@
 # misc
 
+
 ## get peter stuff 
 
     scp -r peter@192.168.0.19:~/share .		拷贝peter的服务器的比较大的东西
