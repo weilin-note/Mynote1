@@ -1,0 +1,101 @@
+# misc
+
+## get peter stuff 
+
+    scp -r peter@192.168.0.19:~/share .		拷贝peter的服务器的比较大的东西
+
+## how to install Chinese input 
+
+<https://github.com/happypeter/job-akae/wiki>	安装中文输入
+
+#git
+## config
+   Download and install Git
+    git config --global user.name "bill"	 配置用户名
+    git config --global user.email 854356932@qq.com   配置用户Email 
+    # change ~/.gitconfig  			 手动修改用户名
+
+## ref
+
+<http://progit.org/book/>                    	推荐git书籍  
+
+## install
+
+    sudo apt-get install git-core tig gitk	安装软件
+
+## basic operation
+
+    mkdir my-repo				创建一个repository目录
+    cd my-repo
+    git init					初始化该目录，生存一个.git目录标志初始化成功，用于记录修改历史
+    vim README
+    git add README				添加README，追踪README
+    git commit -a -m "first commit"			添加标题用于标记修改
+    git remote add origin git@github.com:weilin-note/mynote1.git 添加远程初始URL，用于上传服务器	
+    git push origin master                        
+    tig						查看修改
+
+## github
+    rm -rf .ssh/				如果公钥没有上传到服务器，可以删除.ssh/目录，通过下面的步骤重新生成
+    ssh-keygen -t dsa				通过此命令可以获得github的公钥和私钥，dsa使用加密方式
+    sudo apt-get install xclip			安装xclip，用于剪切，防止出现手动剪切引入不必要的字符等
+    cat /home/jiesse/.ssh/id_dsa.pub| xclip -sel clip	将公钥剪切到剪切板，可以通过Ctrl +V执行粘帖炒作
+    在Account Settings项下的SSH Public Keys中添加公钥
+    ssh git@github.com				此后两个命令用于测试是否将公钥添加成功
+    ssh -v git@github.com
+    在Dashboard 中查看修改上传内容，在Dashboard 的Admin中可以删除Prository
+    可以通过git config push.default xxx: 'nothing'  : Do not push anything
+					 'matching' : Push all matching branches (default)
+	  				 'tracking' : Push the current branch or whatever it is tracking
+	  				 'current'  : Push the current branch
+ 						(注xxx代表后面的红色字体的内容）配置push项
+    可以通过git clone URL即可下载，不同的URL对应下载不同的用户Repository（注不需要新建目录）。
+
+    Sometimes, it took one minite for the key to take effect, but it can also be
+one day, so be patient.
+## git back and delete
+    git checkout 版本号                    	 可以回到该版本号对应的位置	
+    git branch 					 查看分支
+    git checkout master 			 回到主线继续原来的工作
+    git reset --hard HEAD^			 删除最新（最上面）的那个版本
+# Bash
+
+    ls						列出当前子目录及文件
+    mkdir dirname				创建目录
+    cp -r dir/ anotherdir/			拷贝目录dir/到anotherdir/
+
+    ls -l filename				列出filename的详细内容
+    diff -u a-hello.c b-hello.c 		显示a-hello.c和b-hello.c的不同
+    diff -u a-hello.c b-hello.c>abhello.c 	将a-hello.c和b-hello.c重定向于abhello.c，用于显示做了哪些修改		
+    patch a-hello.c < abhello.c  		将a-hello.c更新为新版本
+    patch a-hello.c < abhello.c 		将a-hello.c还原为就版本
+
+
+change prompt:
+
+    export PS1=\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$
+
+
+# vim
+
+## install 
+
+    sudo apt-get install vim			安装vim
+
+## tutorial					教程
+
+    $vimtutor					vim教程
+
+#Homework
+
+## Mr. Song
+
+blog:
+
+http://blog.csdn.net/erazy0/archive/2010/05/11/5579941.aspx
+http://blog.mcuol.com/User/myth_liu/Article/6649_1.htm
+
+## peter
+
+http://happypeter.github.com			peter的个人网页
+
