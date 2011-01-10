@@ -1,5 +1,5 @@
 # misc
-:
+
 ## get peter stuff 
 
     scp -r peter@192.168.0.19:~/share .		拷贝peter的服务器的比较大的东西
@@ -81,11 +81,41 @@ change prompt:
 ## install 
 
     sudo apt-get install vim			安装vim
+## slides
+<http://vim-showoff-peter.heroku.com/>
+### vimrc
+git clone git://github.com/happypeter/peter-vim.git
+check this to install
 
+    <http://happypeter.github.com/GitBeijing/vim-conf-share.html>
+必须将拷贝下来的peter-vim更名为.vim才可以，因为默认插件名为.vim
 ## tutorial					教程
 
     $vimtutor					vim教程
+## 基本操作
+Ctrl + x +l                     补齐与其开头相似的已有的一行                    
+Ctrl + n                        在插入模式下不全已有的字
+yy    复制单行                p  黏贴    y 复制
+Shift + V                       可视选中
+Ctrl + O                        回到光标原来的位置
+u                               撤销
+Ctrl +r                         反撤销
+vimdiff file1 file2             同时显示对比两个文件
+sudo apt-get install gource     
+gource                          安装gource和动画显示对库的操作历史
+sudo |dpkg --purge vim          卸载vim安装包
+dpkg -l                         列出所有安装包
+dpkg -l|grep vim                选择vim安装包
 
+##进程相关
+ps aux                          显示当前所有进程
+ps aux |grep                    选中输出某一进程
+kill 进程号或任务号             结束某一进程
+kill -9                         强制结束某一进程
+
+##用户权限与属主问题
+ls -l                           列出文件详细信息，如权限、日期等
+chmod + 3位8进制数或9为2进制数  修改文件权限
 #Homework
 
 ## Mr. Song
@@ -99,3 +129,14 @@ http://blog.mcuol.com/User/myth_liu/Article/6649_1.htm
 
 http://happypeter.github.com			peter的个人网页
 
+##reading
+
+_How to Become a Hacker_ (By Eric S.R)
+
+http://www.beijinglug.org
+
+http://linuxcommand.org/tlcl.php
+and you can get it by:
+
+    git clone git://github.com/happypeter/TLCL.git
+    
